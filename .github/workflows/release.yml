@@ -89,7 +89,7 @@ jobs:
 
       - name: Rename Executable
         shell: bash
-        run: mv "${{ matrix.config.runtime }}/${{ matrix.project }}${{ matrix.config.ext }}" "tmht${{ matrix.config.ext }}"
+        run: mv "${{ matrix.config.runtime }}/${{ matrix.project }}${{ matrix.config.ext }}" "${{ matrix.config.runtime }}/tmht${{ matrix.config.ext }}"
 
       - name: Archive Build
         uses: TheDoctor0/zip-release@0.7.6
