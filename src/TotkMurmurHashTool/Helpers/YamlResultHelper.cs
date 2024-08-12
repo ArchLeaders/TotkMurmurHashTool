@@ -19,7 +19,7 @@ public class YamlResultHelper
             foreach (string constant in constants) {
                 string hash = Hash($"{constant}.{actorName}");
                 sb.AppendLine($$"""
-                    - { {{string.Format(GDL_DEFAULT_ENTRY, hash)}} }
+                      - { {{string.Format(GDL_DEFAULT_ENTRY, hash)}} }
                     """);
             }
         }
@@ -29,7 +29,8 @@ public class YamlResultHelper
                 string actorNameHash = Hash(actorName);
                 string mixHash = Hash($"{constant}.{actorName}");
                 sb.AppendLine($$"""
-                    - { {{string.Format(GDL_ENTRY, actorNameHash, mixHash)}} }
+
+                        - { {{string.Format(GDL_ENTRY, actorNameHash, mixHash)}} }
                     """);
             }
         }
