@@ -42,11 +42,11 @@ jobs:
           - name: Windows (x64)
             os: ubuntu-latest
             runtime: win-x64
-            ext: exe
+            ext: .exe
           - name: Windows (arm64)
             os: ubuntu-latest
             runtime: win-arm64
-            ext: exe
+            ext: .exe
           - name: Linux (x64)
             os: ubuntu-latest
             runtime: linux-x64
