@@ -13,7 +13,10 @@ public class YamlResultHelper
 
     public static string CreateGdlResult(string[] actorNames, string[] constants)
     {
-        StringBuilder sb = new();
+        StringBuilder sb = new("""
+            # bool
+
+            """);
 
         foreach (string actorName in actorNames) {
             foreach (string constant in constants) {
@@ -28,9 +31,11 @@ public class YamlResultHelper
             foreach (string actorName in actorNames) {
                 string actorNameHash = Hash(actorName);
                 string mixHash = Hash($"{constant}.{actorName}");
-                sb.AppendLine($$"""
 
+                sb.AppendLine($"\n# {mixHash} ({actorName}, {constant}.{actorName})");
+                sb.AppendLine($$"""
                         - { {{string.Format(GDL_ENTRY, actorNameHash, mixHash)}} }
+
                     """);
             }
         }
