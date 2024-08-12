@@ -42,21 +42,27 @@ jobs:
           - name: Windows (x64)
             os: ubuntu-latest
             runtime: win-x64
+            ext: exe
           - name: Windows (arm64)
             os: ubuntu-latest
             runtime: win-arm64
+            ext: exe
           - name: Linux (x64)
             os: ubuntu-latest
             runtime: linux-x64
+            ext: ~
           - name: Linux (arm64)
             os: ubuntu-latest
             runtime: linux-arm64
+            ext: ~
           - name: MacOS (x64)
             os: ubuntu-latest
             runtime: osx-x64
+            ext: ~
           - name: MacOS (arm64)
             os: ubuntu-latest
             runtime: osx-arm64
+            ext: ~
 
     steps:
       - name: Checkout
@@ -80,6 +86,10 @@ jobs:
           -p:IncludeNativeLibrariesForSelfExtract=true \
           -p:PublishSingleFile=true \
           -p:Version=${{ needs.release.outputs.version }} \
+
+      - name: Rename Executable
+        shell: bash
+        run: mv "${{ matrix.config.runtime }}/${{ matrix.project }}${{ matrix.config.ext }}" "tmht${{ matrix.config.ext }}"
 
       - name: Archive Build
         uses: TheDoctor0/zip-release@0.7.6
