@@ -1,0 +1,19 @@
+<uiw:AppWindow x:Class="TotkMurmurHashTool.Views.ShellView"
+               xmlns="https://github.com/avaloniaui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               xmlns:uiw="using:FluentAvalonia.UI.Windowing"
+               xmlns:vm="using:TotkMurmurHashTool.ViewModels"
+               Title="TotK Hash Tool"
+               Width="650"
+               Height="400"
+               d:DesignHeight="450"
+               d:DesignWidth="800"
+               Icon="/Assets/icon.ico"
+               mc:Ignorable="d">
+    <uiw:AppWindow.DataContext>
+        <vm:ShellViewModel />
+    </uiw:AppWindow.DataContext>
+    <Grid Margin="20" RowDefinitions="Auto,*" />
+</uiw:AppWindow>
