@@ -10,7 +10,7 @@ public static class ArgumentParser
 
         if (constantsMark <= -1) {
             actorNames = args;
-            constants = [];
+            constants = ["IsGetAnyway", "IsGet"];
             return;
         }
 
