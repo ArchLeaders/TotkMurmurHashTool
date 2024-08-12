@@ -35,7 +35,12 @@ public partial class ShellViewModel : ObservableObject
 
     private void EvaluateResults()
     {
-        if (ActorNames is null || Constants is null || _view is null) {
+        if (_view is null) {
+            return;
+        }
+
+        if (string.IsNullOrEmpty(ActorNames) || string.IsNullOrEmpty(Constants)) {
+            _view.ResultEditor.Text = string.Empty;
             return;
         }
 
