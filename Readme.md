@@ -20,7 +20,7 @@ Somewhat random tool that generates TotK GDL entries based on actor names.
 # Usage
 
 ```
-...
+tmht.exe Actor1 Actor2 -c IsGetAnyway IsGet
 ```
 
 <br>
