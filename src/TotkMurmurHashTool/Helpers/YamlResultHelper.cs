@@ -28,7 +28,7 @@ public class YamlResultHelper
         }
 
         foreach (string constant in constants) {
-            sb.AppendLine($"\n# {constant}");
+            sb.AppendLine($"\n# {Hash(constant)} ({constant})");
             foreach (string actorName in actorNames) {
                 string actorNameHash = Hash(actorName);
                 string mixHash = Hash($"{constant}.{actorName}");
